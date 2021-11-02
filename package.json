@@ -4,6 +4,7 @@
   "description": "Website ban giay",
   "main": "/src/index.js",
   "scripts": {
+    "makeup": "lint-staged",
     "start": "nodemon --inspect src/index.js",
     "watch": "node-sass -w src/resourses/scss/ -o src/public/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,9 +23,20 @@
     "url": "https://github.com/btphongdotcom/shoes/issues"
   },
   "homepage": "https://github.com/btphongdotcom/shoes#readme",
+  "lint-staged": {
+    "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write "
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.3.4"
+    "express-handlebars": "^5.3.4",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
+    "prettier": "^2.4.1"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
