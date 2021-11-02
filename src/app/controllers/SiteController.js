@@ -6,8 +6,14 @@ class SiteController {
         res.render('home')
     }
     // [GET] /account
-    account(req, res) {
-        res.render('account')
+    register(req, res) {
+        res.render('register')
+    }
+    admin(req, res) {
+        res.render('admin')
+    }
+    customer(req, res) {
+        res.render('customer')
     }
     cart(req, res){
         res.render('cart')
