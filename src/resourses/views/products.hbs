@@ -1,32 +1,42 @@
-<div class="small-container">
-        <div class="row row-2">
-            <h2>All Producrs</h2>
-            <select>
-                <option>Default Shorting</option>
-                <option>Short by price</option>
-                <option>Short by popularity</option>
-                <option>Short by rating</option>
-                <option>Short by sale</option>
-            </select>
-        </div>
-<div class="row">
-            {{#each products}}
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{{this.img}}" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">{{this.name}}</h5>
-                <p class="card-text">{{this.price}}</p>
-                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-            </div>
-        </div>
-            {{/each}}
-   </div>     
-
-        <div class="page-btn">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-            <span>&#8594</span>
-        </div>
+<div class='small-container'>
+    <div class='row row-2'>
+        <h2>All Producrs</h2>
+        <select>
+            <option>Default Shorting</option>
+            <option>Short by price</option>
+            <option>Short by popularity</option>
+            <option>Short by rating</option>
+            <option>Short by sale</option>
+        </select>
     </div>
+    <div class='row'>
+        {{#each products}}
+            <div class='card' style='width: 18rem;'>
+                <a href='/products/{{this.slug}}'>
+                    {{#each this.img}}
+                        <img
+                            class='card-img-top'
+                            src='{{this.0.img}}'
+                            alt='Card image cap'
+                        />
+                    {{/each}}
+                </a>
+                <div class='card-body'>
+                    <a href='/products/{{this.slug}}'><h5
+                            class='card-title'
+                        >{{this.name}}</h5></a>
+                    <p class='card-text'>{{this.price}}</p>
+                    <a href='#' class='btn btn-primary'>Thêm vào giỏ hàng</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+
+    <div class='page-btn'>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>&#8594</span>
+    </div>
+</div>

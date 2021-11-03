@@ -1,0 +1,26 @@
+<div class='mt-4'>
+    <div class='row'>
+        <div class='col-lg-6'>
+            {{#each product.img}}
+                <img src='{{this}}' class='img-thumbnail' width='450px' />
+
+            {{/each}}
+        </div>
+        <div class='col-lg-3'>
+            <h2>{{product.name}}</h2>
+
+            <p>{{product.price}}</p>
+            <select
+                class='form-select form-select-lg mb-3'
+                aria-label='.form-select-lg example'
+            >
+                <option selected>Open this select menu</option>
+                {{#each product.size}}
+                    <option value='{{this}}'>{{this}}</option>
+                {{/each}}>
+            </select>
+            <p>{{product.description}}</p>
+            <a href='#' class='btn btn-primary'>Thêm vào giỏ hàng</a>
+        </div>
+    </div>
+</div>

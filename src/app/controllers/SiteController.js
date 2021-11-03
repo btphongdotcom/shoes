@@ -1,24 +1,21 @@
-
 class SiteController {
-
     //[GET] /
     index(req, res) {
-        res.render('home')
+        res.render('home');
     }
     // [GET] /account
     register(req, res) {
-        res.render('register')
+        res.render('account/register');
     }
     admin(req, res) {
-        res.render('admin')
+        res.render('account/admin');
     }
     customer(req, res) {
-        res.render('customer')
+        res.render('account/customer');
     }
-    cart(req, res){
-        res.render('cart')
+    cart(req, res) {
+        res.render('cart');
     }
 }
 
-module.exports = new SiteController;
-
+module.exports = new SiteController();
